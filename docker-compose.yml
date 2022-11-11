@@ -16,6 +16,13 @@ services:
 
   db:
     build: ./infra/mysql
+    ports:
+      - 3335:3306
+    environment:
+      MYSQL_DATABASE: laravel
+      MYSQL_USER: phper
+      MYSQL_PASSWORD: "secret"
+      MYSQL_ROOT_PASSWORD: "root"
     volumes:
       - db-store:/var/lib/mysql
 
